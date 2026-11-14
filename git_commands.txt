@@ -1,0 +1,45 @@
+GIT COMMANDS USED IN THE ASSIGNMENT
+===================================
+
+--- Step 1: Local repository setup ---
+mkdir git-assignment            - Creates the project folder.
+cd git-assignment               - Moves into the project folder.
+git init                        - Initializes an empty Git repository in the folder.
+git config user.name "Name"     - Sets the author name used in commits.
+git config user.email "e@x.com" - Sets the author email used in commits.
+git status                      - Shows which files are untracked, modified or staged.
+
+--- Step 2: Git workflow ---
+git add .                       - Stages all files for the next commit.
+git commit -m "message"         - Saves the staged changes as a commit with a message.
+git branch -M main              - Renames the current branch to main.
+git branch feature              - Creates a new branch named feature.
+git switch feature              - Switches the working directory to the feature branch.
+git switch main                 - Switches back to the main branch.
+git merge feature --no-ff -m "message"
+                                - Merges feature into main and always creates a merge commit.
+git log --oneline --graph --all --decorate
+                                - Shows the commit history as a compact graph of all branches.
+
+--- Step 3: .gitignore ---
+git add .gitignore              - Stages the .gitignore file.
+git status                      - Confirms test.log and temp/ are not listed (ignored).
+git check-ignore -v test.log temp/notes.txt
+                                - Shows which .gitignore rule ignores each file.
+
+--- Step 4: Undo operation ---
+git log --oneline               - Shows the commit history before and after the undo.
+git revert HEAD --no-edit       - Creates a new commit that reverses the last commit (safe for shared history).
+git show --stat HEAD            - Shows the files changed by the latest commit.
+
+--- Step 5: GitHub integration ---
+git remote add origin <URL>     - Links the local repo to the GitHub repo named origin.
+git remote set-url origin <URL> - Corrects the URL of the existing remote.
+git remote -v                   - Displays the configured remote URLs.
+git push -u origin main         - Pushes main to GitHub and sets it as the upstream branch.
+git push origin feature         - Pushes the feature branch to GitHub.
+
+--- Step 6: Documentation file ---
+git add git_commands.txt        - Stages this documentation file.
+git commit -m "Add git_commands.txt" - Commits the file.
+git push                        - Uploads the new commit to GitHub.
